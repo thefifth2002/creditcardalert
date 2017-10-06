@@ -16,3 +16,14 @@ Copyright ©2017 Hao Wu
 * Kafka - simulation of real time transaction data feed to Spark Streaming.
 * MySQL database - store cutomer data and accumulating transaction data.
 * Flask and bootstrap - enable front-end visulization.
+
+# Detection algorithm
+Credit card purchases can be both online and local purchases.
+1. If a purchase was made at local store: Compare customer zipcode to local store zipcode from transaction data, if the difference is too big, like > 800, this transaction is maked as "remote local". Customer data has a "travel_alerted" field, if the travel_alerted is "NO", apply algorithm 1; if it is "YES", skip algorithm 1 and apply algorithm 3.
+2. If a purchase was made on line: check customer zipcode againse billing address zipcode. If billing zipcode is different, this transaction is marked as "wrong billing". If the billing zipcode is correct, apply algorithm 3.
+3. Check customer current balance + purchase amount again credit card limit. If limit is reached, mark transaction as "limit reached", if not, update current balance.
+
+# Repo structure
+[./src/flask]()contains all front end files
+
+[./src/ingestion] ingest customer data from amazon s3 to MySQL databaes.
