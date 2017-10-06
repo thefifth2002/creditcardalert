@@ -27,6 +27,8 @@ Credit card purchases can be both online and local purchases.
 `/src/flask` Contains all front end files.
 
 `/src/ingestion` Ingest customer data from amazon s3 to MySQL databaes.
+
 `/src/kafkaproducer` Kafkaproduer produce transaction streaming data.
+
 `/src/sparkstreaming` Sparking Streaming process transaction data.
 
