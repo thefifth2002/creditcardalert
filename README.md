@@ -24,6 +24,7 @@ Credit card purchases can be both online and local purchases.
 3. Check customer current balance + purchase amount again credit card limit. If limit is reached, mark transaction as "limit reached", if not, update current balance.
 
 # Repo structure
-[/src/flask]() Contains all front end files
-
-[/src/ingestion]() Ingest customer data from amazon s3 to MySQL databaes.
+'/src/flask' Contains all front end files.
+'/src/ingestion' Ingest customer data from amazon s3 to MySQL databaes.
+'/src/kafkaproducer' Kafkaproduer produce transaction streaming data.
+'/src/sparkstreaming' Sparking Streaming process transaction data.
