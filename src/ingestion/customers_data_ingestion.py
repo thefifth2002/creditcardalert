@@ -15,16 +15,6 @@ from pyspark.sql import SparkSession
 import mysql.connector as sqlcon
 from botocore.exceptions import ClientError
 
-h = ''
-u = ''
-pwd = ''
-db = ''
-
-def str_to_bool(s):
-    if s == 'True':
-        return True
-    elif s == 'False':
-        return False
 # JSON->dictionary
 def extractor(json_body):
     json_obj = json.loads(json_body)
@@ -97,7 +87,7 @@ def insert_to_db(partition):
 if __name__ == "__main__":
 
     sc = SparkContext(appName="")
-    some_rdd = sc.textFile("s3a://creditcardalertprojecttest1/customers.json")
+    some_rdd = sc.textFile("s3a://")
 
     msgs = some_rdd.map(lambda x: extractor(x)).filter(lambda x: none_filter(x))
     inserted_customers = msgs.mapPartitions(insert_to_db)
