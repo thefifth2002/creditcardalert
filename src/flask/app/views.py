@@ -28,10 +28,6 @@ def detection_algorithm():
 
 @app.route('/demonstration')
 def demonstration():
-  h = ''
-  u = ''
-  pwd = ''
-  db = ''
   connection = sqlcon.connect(host = h,user = u, passwd = pwd, db = db)
   cursor = connection.cursor()
   sql= "SELECT * FROM transactions_accumulating tx, customers_filtered cx WHERE tx.user_id = cx.user_id AND tx.alerted != 'NO' order by tx.transaction_id desc limit 10"
