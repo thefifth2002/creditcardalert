@@ -24,6 +24,6 @@ Credit card purchases can be both online and local purchases.
 3. Check customer current balance + purchase amount again credit card limit. If limit is reached, mark transaction as "limit reached", if not, update current balance.
 
 # Repo structure
-[./src/flask]()contains all front end files
+[/src/flask]() Contains all front end files
 
-[./src/ingestion] ingest customer data from amazon s3 to MySQL databaes.
+[/src/ingestion]() Ingest customer data from amazon s3 to MySQL databaes.
