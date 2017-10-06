@@ -1,0 +1,47 @@
+{% extends "base.html" %} <!--this means that you are extending the base tempate -->
+{% block demonstration %} <!-- this is the name of the block below -->
+<div class="container">
+        <div class="starter-template">
+        <h4>Display rencent 10 alerted transactions</h4>
+        <!-- <button type="submit" value="Send" name="list results" class="btn btn-default id-submit">Display</button> -->
+          <div class="row" style="height:100vh;">
+                  <div class="col-md-10 col-md-offset-1">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>time</th>
+                            <th>c_id</th>
+                            <th>c_zip</th>
+                            <th>c_balance</th>
+                            <th>c_limit</th>
+                            <th>c_tvl</th>
+                            <th>t_id</th>
+                            <th>t_amount</th>
+                            <th>lc_t_zip</th>
+                            <th>ol_bill_zip</th>
+                            <th>msg</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for val in output %}
+                          <tr>
+                            <td>{{val.time}}</td>
+                            <td>{{val.c_id}}</td>
+                            <td>{{val.c_zip}}</td>
+                            <td>{{val.c_balance}}</td>
+                            <td>{{val.c_limit}}</td>
+                            <td>{{val.c_tvl}}</td>
+                            <td>{{val.t_id}}</td>
+                            <td>{{val.t_amount}}</td>
+                            <td>{{val.lc_t_zip}}</td>
+                            <td>{{val.ol_bill_zip}}</td>
+                            <td>{{val.msg}}</td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                  </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
