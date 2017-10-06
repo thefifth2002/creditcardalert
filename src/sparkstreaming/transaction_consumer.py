@@ -7,10 +7,6 @@ from pyspark.streaming.kafka import KafkaUtils
 import mysql.connector as sqlcon
 import json
 
-h = ''
-u = ''
-pwd = ''
-db = ''
 # JSON->dictionary
 def extractor(json_string):
     json_obj = json.loads(json_string)
