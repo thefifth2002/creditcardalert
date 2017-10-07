@@ -1,8 +1,16 @@
 {% extends "base.html" %} <!--this means that you are extending the base tempate -->
 {% block about_me %} <!-- this is the name of the block below -->
            <!-- <embed src="../static/files/Hao_Wu_final.pdf" width="800px" height="2100px" /> -->
-           <div id="myself">
-                <h2 >Hao Wu, M. S., Ph. D.</h1>
-           </div>
-           <embed id="resume" src="../static/files/Hao_Wu_resume_insight.pdf" width="612px"height="800px" align="right"/>
+           <body>
+    <div id="myself" style="float:left; width:39%; margin-top: 20px; text-align: center">
+        <img id="haowu" src="../static/images/Hao_Wu_headshot.jpg" alt="head_shot" style="width:200px;height:200px;margin: 20px 30% 20px">
+        <h4>Hao Wu, M. S., Ph. D.</h4>
+        <a href="https://github.com/thefifth2002/" target="_blank">Personal Github: https://github.com/thefifth2002</a><br>
+        <a href="https://www.linkedin.com/in/wu-hao/" target="_blank">linkedin: https://www.linkedin.com/in/wu-hao</a>
+    </div>
+    <div style="float:right;width:60%">
+        <!-- <embed id="resume" src="../static/files/Hao_Wu_resume_insight.pdf" width="612px"height="800px" align="right"/> -->
+        <embed id="resume" style="width:99%;height:800px"src="../static/files/Hao_Wu_resume_insight.pdf"/> 
+    </div>
+</body>
 {% endblock %}
